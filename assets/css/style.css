@@ -630,54 +630,53 @@ dt {
   margin-right: 10px;
   font-size: 11px;
 }
-section {
-  max-width: 1440px;
-}
-section #title {
+
+.title {
   max-width: 1000px;
   border: 0;
   outline: none;
 }
-section #title h1 {
+.title h1 {
   font-family: "OpenSansLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 40px;
   text-align: center;
   line-height: 36px;
 }
-section #title p {
+.title p {
   color: #d7cfbe;
   font-family: "OpenSansLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 32px;
   text-align: center;
 }
-section #title .credits {
+.title .credits {
   font-size: 11px;
   font-family: "OpenSansRegular", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   color: #696969;
 }
-section #title .credits.left {
+.title .credits.left {
   float: left;
 }
-section #title .credits.right {
+.title .credits.right {
   float: right;
 }
-section #title .title-tagline {
+.title .title-tagline {
   float: left;
   max-width: 75%;
 }
-section #title .title-icon {
+.title-icon {
   float: right;
   max-height: 200px;
   max-width: 200px;
   min-width: 25%;
 }
-section #title .title-name {
+.title-name {
   font-weight: bold;
 }
-section #about {
+.about {
+    max-width = 1440px;
   border: 0;
   outline: none;
 }
