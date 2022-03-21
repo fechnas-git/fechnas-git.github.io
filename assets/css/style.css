@@ -676,12 +676,13 @@ section #title .credits.right {
 }
 section #title .title-tagline {
   float: left;
-  margin-right: 50px;
+  max-width: 75%;
 }
 section #title .title-icon {
   float: right;
   max-height: 200px;
   max-width: 200px;
+  min-width: 25%;
 }
 section #title .title-name {
   font-weight: bold;
