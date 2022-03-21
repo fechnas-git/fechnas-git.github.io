@@ -638,10 +638,10 @@ section {
 .title {
   max-width: 1440px;
   border: 0;
+  display: flex;
   outline: none;
   overflow: hidden;
   margin: auto;
-  margin-top: 10px;
 }
 .title h1 {
   font-family: "OpenSansLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -686,10 +686,10 @@ section {
 .about {
   max-width: 1440px;
   border: 0;
+  display: flex;
   outline: none;
   overflow: hidden;
   margin: auto;
-  margin-top: 10px;
 }
 
 .about .aboutcontent {
@@ -703,7 +703,6 @@ section {
   outline: none;
   overflow: hidden;
   margin: auto;
-  margin-top: 10px;
   justify-content: space-between;
 }
 
