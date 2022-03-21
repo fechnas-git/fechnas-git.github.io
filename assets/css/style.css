@@ -635,6 +635,7 @@ dt {
   max-width: 1000px;
   border: 0;
   outline: none;
+  overflow: hidden;
 }
 .title h1 {
   font-family: "OpenSansLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -676,7 +677,7 @@ dt {
   font-weight: bold;
 }
 .about {
-    max-width = 1440px;
+  max-width: 1440px;
   border: 0;
   outline: none;
 }
