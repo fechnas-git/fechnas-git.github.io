@@ -671,6 +671,7 @@ dt {
 }
 .title-icon {
   float: right;
+  margin-left: 50px;
   max-height: 200px;
   max-width: 200px;
   min-width: 25%;
