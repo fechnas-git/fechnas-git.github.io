@@ -636,7 +636,8 @@ dt {
   border: 0;
   outline: none;
   overflow: hidden;
-  margin: 10px, auto;
+  margin: auto;
+  margin-top: 10px;
 }
 .title h1 {
   font-family: "OpenSansLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -683,8 +684,32 @@ dt {
   border: 0;
   outline: none;
   overflow: hidden;
-  margin: 10px, auto;
+  margin: auto;
+  margin-top: 10px;
 }
+
+.skills {
+  max-width: 1440px;
+  border: 0;
+  display: flex;
+  outline: none;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.skillcategory {
+  box-sizing: border-box;
+}
+.skilllabel {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.skillcontent {
+  margin: 3px 0;
+}
+
 @media print, screen and (max-width: 720px) {
   #title .credits {
     display: block;
