@@ -657,7 +657,7 @@ section #title p {
   color: #d7cfbe;
   font-family: "OpenSansLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 32px;
   text-align: center;
 }
 section #title .credits {
@@ -681,6 +681,9 @@ section #title .title-icon {
   float: right;
   max-height: 200px;
   max-width: 200px;
+}
+section #title .title-name {
+  font-weight: bold;
 }
 @media print, screen and (max-width: 720px) {
   #title .credits {
