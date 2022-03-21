@@ -636,12 +636,13 @@ dt {
   border: 0;
   outline: none;
   overflow: hidden;
+  align-self: center;
 }
 .title h1 {
   font-family: "OpenSansLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 40px;
-  text-align: center;
+  text-align: left;
   line-height: 36px;
 }
 .title p {
@@ -649,7 +650,7 @@ dt {
   font-family: "OpenSansLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 32px;
-  text-align: center;
+  text-align: left;
 }
 .title .credits {
   font-size: 11px;
@@ -676,10 +677,12 @@ dt {
 .title-name {
   font-weight: bold;
 }
+
 .about {
   max-width: 1440px;
   border: 0;
   outline: none;
+  overflow: hidden;
 }
 @media print, screen and (max-width: 720px) {
   #title .credits {
