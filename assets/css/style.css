@@ -673,8 +673,12 @@ section #title .credits.left {
 section #title .credits.right {
   float: right;
 }
-section #title .title-icon {
+section #title .title-tagline {
   float: left;
+  margin-right: 50px;
+}
+section #title .title-icon {
+  float: right;
   max-height: 200px;
   max-width: 200px;
 }
