@@ -632,7 +632,7 @@ dt {
 }
 
 section {
-  padding: 170, 100;
+  padding: 100px 170px 100px 170px;
 }
 
 .title {
@@ -656,6 +656,7 @@ section {
   font-weight: normal;
   font-size: 32px;
   text-align: left;
+  max-width: 75%;
 }
 .title .credits {
   font-size: 11px;
