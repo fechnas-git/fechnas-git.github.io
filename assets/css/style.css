@@ -689,6 +689,10 @@ dt {
   margin-top: 10px;
 }
 
+.about .aboutcontent {
+  box-sizing: border-box;
+}
+
 .skills {
   max-width: 1440px;
   border: 0;
