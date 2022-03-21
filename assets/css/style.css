@@ -671,10 +671,8 @@ dt {
 }
 .title-icon {
   float: right;
-  margin-left: 50px;
-  max-height: 200px;
-  max-width: 200px;
-  min-width: 25%;
+  max-height: 25%;
+  max-width: 25%;
 }
 .title-name {
   font-weight: bold;
