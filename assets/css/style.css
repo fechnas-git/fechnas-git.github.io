@@ -135,7 +135,7 @@ dd {
 menu,
 ol,
 ul {
-  padding: 0 0 0 40px;
+  padding: 0 0 0 0px;
 }
 nav ul,
 nav ol {
