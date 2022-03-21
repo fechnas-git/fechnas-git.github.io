@@ -631,6 +631,10 @@ dt {
   font-size: 11px;
 }
 
+section {
+  padding: 170, 100;
+}
+
 .title {
   max-width: 1440px;
   border: 0;
