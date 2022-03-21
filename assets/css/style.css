@@ -641,6 +641,7 @@ section {
   margin-top: 70px;
 }
 section #title {
+  max-width: 1000px;
   border: 0;
   outline: none;
   margin: 0 0 50px 0;
@@ -684,6 +685,12 @@ section #title .title-icon {
 }
 section #title .title-name {
   font-weight: bold;
+}
+section #about {
+  border: 0;
+  outline: none;
+  margin: 0 0 50px 0;
+  padding: 0 0 5px 0;
 }
 @media print, screen and (max-width: 720px) {
   #title .credits {
