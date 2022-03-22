@@ -738,6 +738,10 @@ body .section-content {
   width: 400px;
 }
 
+.contentwrap: {
+  display: flex;
+}
+
 .contentwrap p {
   float: right;
 }
