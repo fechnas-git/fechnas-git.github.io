@@ -711,11 +711,14 @@ section {
   flex-direction: row;
 }
 
-.about .aboutcontent {
+.section-content {
   box-sizing: border-box;
   float: right;
   max-width: 700px;
   width: 100%;
+}
+
+.about .aboutcontent {
 }
 
 .skills {
@@ -729,10 +732,9 @@ section {
 }
 
 .skillwrapper {
-  box-sizing: border-box;
-  float: right;
-  max-width: 700px;
-  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .skillcategory {
   box-sizing: border-box;
