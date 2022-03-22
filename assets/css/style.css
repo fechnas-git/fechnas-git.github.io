@@ -92,7 +92,7 @@ pre {
   margin: 1em 0;
 }
 p {
-  font-size: 1em;
+  font-size: 1.2em;
 }
 pre,
 code,
@@ -649,7 +649,7 @@ section {
   display: flex;
   outline: none;
   overflow: hidden;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   margin: auto;
 }
@@ -731,6 +731,8 @@ section {
 
 .projectimg {
   float: left;
+  height: 400px;
+  width: 400px;
 }
 
 .contentwrap p {
