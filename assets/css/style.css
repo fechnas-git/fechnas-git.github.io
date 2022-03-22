@@ -749,10 +749,6 @@ body .section-content {
   float: right;
 }
 
-.introduction {
-  justify-content: left;
-}
-
 @media print, screen and (max-width: 720px) {
   #title .credits {
     display: block;
