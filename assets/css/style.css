@@ -636,7 +636,7 @@ dt {
 
 section {
   display: flex;
-  padding: 50px 80px 50px 80px;
+  padding: 100px 80px 100px 80px;
   flex-direction: row;
   justify-content: center;
   max-width: 1440px;
