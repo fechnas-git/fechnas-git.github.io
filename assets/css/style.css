@@ -91,6 +91,9 @@ p,
 pre {
   margin: 1em 0;
 }
+p {
+  font-size: 1em;
+}
 pre,
 code,
 kbd,
