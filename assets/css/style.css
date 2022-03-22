@@ -673,7 +673,9 @@ section {
   float: right;
 }
 .title .title-tagline {
-  float: left;
+  font-weight: 300;
+  position: relative;
+  line-height: 50px;
   max-width: 75%;
 }
 .title-icon {
