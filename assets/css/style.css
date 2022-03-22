@@ -640,9 +640,10 @@ section {
   justify-content: center;
 }
 
-.section-start {
+body .section-start {
   float: left;
   text-align: right;
+  width: 200px;
   flex-shrink: 0;
   margin-right: 80px;
   text-transform: uppercase;
