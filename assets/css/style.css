@@ -649,7 +649,7 @@ section {
   display: flex;
   outline: none;
   overflow: hidden;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   margin: auto;
 }
@@ -667,6 +667,7 @@ section {
   font-size: 32px;
   text-align: left;
   max-width: 75%;
+  float: left;
 }
 .title .credits {
   font-size: 11px;
@@ -683,6 +684,8 @@ section {
 .title .title-tagline {
   font-weight: 300;
   position: relative;
+  display: flex;
+  flex-direction: row;
   line-height: 50px;
   max-width: 75%;
 }
