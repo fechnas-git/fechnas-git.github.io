@@ -736,10 +736,12 @@ body .section-content {
   float: left;
   height: 400px;
   width: 400px;
+  margin-right: 20px;
 }
 
 .contentwrap {
   display: flex;
+  margin-bottom: 20px;
 }
 
 .contentwrap p {
