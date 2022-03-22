@@ -695,7 +695,7 @@ body .section-start {
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   line-height: 50px;
 }
 .title-icon {
