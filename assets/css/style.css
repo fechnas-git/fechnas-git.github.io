@@ -635,22 +635,25 @@ dt {
 }
 
 section {
-  padding: 50px 80px 50px 80px;
   display: flex;
+  padding: 50px 80px 50px 80px;
+  justify-content: center;
 }
 
 .section-start {
   float: left;
+  text-align: right;
+  flex-shrink: 0;
+  margin-right: 80px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .title {
   max-width: 1440px;
   border: 0;
-  display: flex;
   outline: none;
   overflow: hidden;
-  flex-direction: column;
-  justify-content: space-around;
   margin: auto;
 }
 .title h1 {
@@ -686,8 +689,8 @@ section {
   position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   line-height: 50px;
-  max-width: 75%;
 }
 .title-icon {
   float: right;
@@ -701,10 +704,8 @@ section {
 .about {
   max-width: 1440px;
   border: 0;
-  display: flex;
   outline: none;
   overflow: hidden;
-  margin: auto;
 }
 
 .about .aboutcontent {
