@@ -660,7 +660,6 @@ body .section-start {
   border: 0;
   outline: none;
   overflow: hidden;
-  margin: auto;
 }
 .title h1 {
   font-family: "OpenSansLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -748,8 +747,8 @@ body .section-content {
   float: right;
 }
 
-section .introduction {
-  justify-content: right;
+.introduction {
+  justify-content: left;
 }
 
 @media print, screen and (max-width: 720px) {
