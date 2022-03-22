@@ -637,7 +637,12 @@ dt {
 section {
   display: flex;
   padding: 50px 80px 50px 80px;
+  flex-direction: row;
   justify-content: center;
+  max-width: 1440px;
+  border: 0;
+  outline: none;
+  overflow: hidden;
 }
 
 body .section-start {
@@ -703,31 +708,11 @@ body .section-start {
   font-weight: bold;
 }
 
-.about {
-  max-width: 1440px;
-  border: 0;
-  outline: none;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-}
-
 body .section-content {
   box-sizing: border-box;
   float: right;
   width: 100%;
   max-width: 700px;
-}
-
-.about .aboutcontent {
-}
-
-.skills {
-  max-width: 1440px;
-  border: 0;
-  display: flex;
-  outline: none;
-  justify-content: space-between;
 }
 
 .skillwrapper {
