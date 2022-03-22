@@ -633,6 +633,11 @@ dt {
 
 section {
   padding: 50px 80px 50px 80px;
+  display: flex;
+}
+
+.section-start {
+  float: left;
 }
 
 .title {
@@ -721,6 +726,14 @@ section {
   margin: 3px 0;
 }
 
+.projectimg {
+  float: left;
+}
+
+.contentwrap p {
+  float: right;
+}
+
 @media print, screen and (max-width: 720px) {
   #title .credits {
     display: block;
@@ -736,12 +749,4 @@ section {
     float: none;
     display: block;
   }
-}
-
-section {
-  display: flex;
-}
-
-.section-title {
-  float: left;
 }
