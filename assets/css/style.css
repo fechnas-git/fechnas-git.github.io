@@ -676,8 +676,8 @@ section {
 }
 .title-icon {
   float: right;
-  min-height: 25%;
-  min-width: 25%;
+  height: 25%;
+  width: 25%;
 }
 .title-name {
   font-weight: bold;
