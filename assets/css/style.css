@@ -641,6 +641,8 @@ section {
   display: flex;
   outline: none;
   overflow: hidden;
+  flex-direction: column;
+  justify-content: space-around;
   margin: auto;
 }
 .title h1 {
@@ -676,8 +678,8 @@ section {
 }
 .title-icon {
   float: right;
-  height: 25%;
-  width: 25%;
+  height: 250px;
+  width: 250px;
 }
 .title-name {
   font-weight: bold;
@@ -736,4 +738,8 @@ section {
 
 section {
   display: flex;
+}
+
+.section-title {
+  float: left;
 }
