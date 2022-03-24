@@ -629,7 +629,7 @@ dt {
 }
 #header nav ul li.forkindex {
   float: left;
-  margin-left: 10px;
+  padding: 0px 14px;
 }
 #header nav ul li.downloads {
   float: right;
