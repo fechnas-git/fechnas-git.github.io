@@ -609,13 +609,13 @@ dt {
     0px 3px 7px rgba(0, 0, 0, 0.7);
   background-color: #444444;
   */
-  padding: 10px 12px;
   margin-top: 6px;
   line-height: 14x;
-  font-size: 14px;
+  font-size: 18px;
   display: inline-block;
   text-align: center;
   text-transform: uppercase;
+  font-weight: bold;
 }
 #header nav ul li a:hover {
   background: linear-gradient(#353535, #222222);
