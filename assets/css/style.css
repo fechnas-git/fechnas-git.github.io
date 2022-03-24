@@ -627,6 +627,10 @@ dt {
   float: left;
   margin-left: 0px;
 }
+#header nav ul li.forkindex {
+  float: left;
+  margin-left: 10px;
+}
 #header nav ul li.downloads {
   float: right;
   margin-left: 6px;
@@ -635,6 +639,12 @@ dt {
   float: right;
   margin-right: 10px;
   font-size: 11px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 section {
