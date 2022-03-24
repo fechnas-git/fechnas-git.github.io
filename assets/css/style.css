@@ -601,18 +601,21 @@ dt {
 }
 #header nav ul li a {
   color: white;
+  /*
   border: 1px solid #080808;
   background: linear-gradient(#4d4d4d, #333333);
   border-radius: 2px;
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.342),
     0px 3px 7px rgba(0, 0, 0, 0.7);
   background-color: #444444;
+  */
   padding: 10px 12px;
   margin-top: 6px;
-  line-height: 14px;
-  font-size: 14px;
+  line-height: 22x;
+  font-size: 22px;
   display: inline-block;
   text-align: center;
+  text-transform: uppercase;
 }
 #header nav ul li a:hover {
   background: linear-gradient(#474747, #222222);
