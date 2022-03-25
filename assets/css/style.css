@@ -876,6 +876,7 @@ pre[class*="language-"] {
 .token.attr-value {
   color: #d8811d;
 }
+.token.literal,
 .token.punctuation,
 .token.operator {
   color: #f1f1f1; /* no highlight */
