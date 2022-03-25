@@ -635,7 +635,7 @@ Prism.languages.csharp = Prism.languages.extend("clike", {
   string: /@?("|')(\\?.)*?\1/g,
   preprocessor: /^\s*#.*/gm,
   number: /\b-?(0x)?\d*\.?\d+\b/g,
-  unityvar: /\b(Vector3|LayerMask|Transform|Collider2D)\b/g,
+  unityvar: /\b(Vector3|LayerMask|Transform|Collider2D|Physics2D)\b/g,
 });
 Prism.languages.go = Prism.languages.extend("clike", {
   keyword:
