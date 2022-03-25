@@ -91,14 +91,23 @@
       Collider2D col; 
       foreach(Transform character in Characters) 
       { 
-        col  = Physics2D.OverlapPointc(character.position + direction, layer); 
+        col  = Physics2D.OverlapPoint(character.position + direction, layer); 
         if (col != null) 
           return true; 
       } 
       return false; 
     }</code>
             </pre>
-            <p></p>
+            <p>
+              The 4 movement directions are stored as corresponding vectors in
+              an array. In every players' turn and after every movement, it is
+              checked if any collidable objects are in place of any of the 4
+              directions correlated to the 4 characters' positions. If so, the
+              movement option is invalidated by setting the movement tile to
+              false. If there is no collidable object in the corresponding
+              direction, the movement tile is activated and can be clicked to
+              move towards.
+            </p>
           </div>
         </div>
       </section>
