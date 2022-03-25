@@ -793,6 +793,8 @@ body .section-content {
 /**
  * GHColors theme by Avi Aryan (http://aviaryan.in)
  * Inspired by Github syntax coloring
+
+ CODE FORMATTER CSS
  */
 
 code[class*="language-"],
@@ -837,8 +839,8 @@ pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
-  border: 1px solid #dddddd;
-  background-color: white;
+  border: 1px solid #000000;
+  background-color: #363636;
 }
 
 :not(pre) > code[class*="language-"],
@@ -850,15 +852,15 @@ pre[class*="language-"] {
   padding: 0.2em;
   padding-top: 1px;
   padding-bottom: 1px;
-  background: #f8f8f8;
-  border: 1px solid #dddddd;
+  background: #3b3b3b;
+  border: 1px solid #000000;
 }
 
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #999988;
+  color: #4e753f;
   font-style: italic;
 }
 
@@ -868,11 +870,11 @@ pre[class*="language-"] {
 
 .token.string,
 .token.attr-value {
-  color: #e3116c;
+  color: #d8811d;
 }
 .token.punctuation,
 .token.operator {
-  color: #393a34; /* no highlight */
+  color: #f1f1f1; /* no highlight */
 }
 
 .token.entity,
@@ -885,20 +887,20 @@ pre[class*="language-"] {
 .token.property,
 .token.regex,
 .token.inserted {
-  color: #36acaa;
+  color: #3669ac;
 }
 
 .token.atrule,
 .token.keyword,
 .token.attr-name,
 .language-autohotkey .token.selector {
-  color: #00a4db;
+  color: #3669ac;
 }
 
 .token.function,
 .token.deleted,
 .language-autohotkey .token.tag {
-  color: #9a050f;
+  color: #fff78c;
 }
 
 .token.tag,
