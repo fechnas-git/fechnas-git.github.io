@@ -84,7 +84,7 @@
                     public void CheckPossibleMovements () {
                       for(int i = 0; i < directionArray.Length; i++) {
                         if(CheckForCollidableObjects(directionArray[i], collidableObjects))
-                          &lt;ossibleMoveTiles[i].SetActive(false);
+                          possibleMoveTiles[i].SetActive(false);
                         else
                           possibleMoveTiles[i].SetActive(true);
                       }
