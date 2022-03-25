@@ -18,7 +18,73 @@
   <body>
     <div id="header"></div>
     <div class="wrapper">
-      <h1>Purrrgatory</h1>
+      <section class="introduction">
+        <div class="title">
+          <h1>Escape from Purrrgatory</h1>
+          <h3 style="color: #d7cfbe">
+            Early 2021 marked the true beginning of my journey in game
+            development. Escape from Purrrgatory was the first project outside
+            of personal prototypes and mini projects that I had the opportunity
+            to work on. I learned alot from my teammates about the whole process
+            of developing a game from scratch. It was a valuable and fun
+            experience that only further deepened my desire to develop games.
+          </h3>
+        </div>
+      </section>
+      <section class="content">
+        <div class="contentwrap">
+          <image></image>
+          <h2 style="text-transform: uppercase">The idea</h2>
+          <p>
+            Escape from Purrrgatory is a turn based isometric tactics game in
+            which you control 4 characters at the same time. The characters are
+            bound to each other and standing back to back. They all move and
+            attack at the same time. The characters can be rotated in either
+            clockwise or counterclockwise directions. Whenever the characters
+            attack, they lose attackpower for the next attack. After issuing 2
+            moves while in interest range of an enemy, the turn ends and all
+            enemies move and possibly attack. After the enemy turn, the gameplay
+            loop starts over with the player turn.
+          </p>
+        </div>
+        <div class="contentwrap">
+          <image></image>
+          <h2 style="text-transform: uppercase">The process</h2>
+          <p>
+            The whole idea for the games' design was thought out by Lena.
+            Anastasiia and Lena discussed and decided on the art direction
+            together. To keep things organized, we utilized a Trello board.
+            Daniil and I held regular feature meetings to discuss splitting up
+            the tasks between us and reviewing implemented features. It was very
+            helpful to work together with a seasoned programmer as I learned
+            alot about writing cleaner code and keeping perfomance in mind
+            thanks to Daniil's feedbacks. Finally we ended up with a finished
+            introduction level including dialogs, AI Pathfinding, UI
+            implementation and all major gameplay features such as powerups and
+            three different types of enemies.
+          </p>
+        </div>
+        <div class="contenrwrap">
+          <image></image>
+          <h2 style="text-transform: uppercase">The features</h2>
+          <p>
+            The game is fully controlled with the mouse. Attacking and turning
+            works via UI buttons, whereas movement is done by clicking on a
+            valid movement tile. Two basic functions handled the logic for
+            finding valid movement options:
+            <code>
+              public void CheckPossibleMovements () { for(int i = 0; i <
+              directionArray.Length; i++) { if(CheckCollision(directionArray[i],
+              collidableObjects)) possibleTiles[i].SetActive(false) else
+              possibleTiles[i].SetActive(true) } } private bool
+              CheckForCollidableObjects(Vector3 direction, LayerMask layer) {
+              Collider2D col; foreach(Transform character in Characters) { col =
+              Physics2D.OverlapPointc(character.position + direction, layer); if
+              (Collider != null) return true; } return false; }
+            </code>
+          </p>
+        </div>
+      </section>
     </div>
     <script src="assets/js/stickyheader.js" ;></script>
     <div id="footer"></div>
