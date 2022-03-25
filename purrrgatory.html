@@ -81,24 +81,24 @@
               <pre class="highlight">
                 <code class="language-csharp">
                   <p>                  
-                    public void CheckPossibleMovements() {
-                      for(int i = 0; i &lt; directionArray.Length; i++) {
-                        if(CheckForCollidableObjects(directionArray[i], collidableObjects))
-                          possibleMoveTiles[i].SetActive(false);
-                        else
-                          possibleMoveTiles[i].SetActive(true);
-                      }
-                    }
-                    private void CheckForCollidableObjects(Vector3 direction, LayerMask layer) {
-                      Collider2D col; 
-                      foreach(Transform character in Characters) 
-                      { 
-                        col  = Physics2D.OverlapPointc(character.position + direction, layer); 
-                        if (col != null) 
-                          return true; 
-                      } 
-                      return false; 
-                    }
+public void CheckPossibleMovements() {
+  for(int i = 0; i &lt; directionArray.Length; i++) {
+    if(CheckForCollidableObjects(directionArray[i], collidableObjects))
+      possibleMoveTiles[i].SetActive(false);
+    else
+      possibleMoveTiles[i].SetActive(true);
+  }
+}
+private void CheckForCollidableObjects(Vector3 direction, LayerMask layer) {
+  Collider2D col; 
+  foreach(Transform character in Characters) 
+  { 
+    col  = Physics2D.OverlapPointc(character.position + direction, layer); 
+    if (col != null) 
+      return true; 
+  } 
+  return false; 
+}
                   </p>
                 </code>
               </pre>
