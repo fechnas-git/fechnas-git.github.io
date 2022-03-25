@@ -14,7 +14,7 @@
         $("#footer").load("footer.html");
       });
     </script>
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
   </head>
   <body>
     <div id="header"></div>
@@ -78,55 +78,28 @@
               works via UI buttons, whereas movement is done by clicking on a
               valid movement tile. Two basic functions handled the logic for
               finding valid movement options:
-              <div class="language-js highlighter-rouge">
-                <div class="highlight">
-                  <pre class="highlight">
-                  <code>
-                    <span class="kd">public void </span>
-                    <span class="kc">CheckPossibleMovements </span>
-                    <span class="p">() { </span>
-                    <span class="k">for</span>
-                    <span class="p">(</span>
-                    <span class="kd">int </span>
-                    <span class="na">i </span>
-                    <span class="p">= </span>
-                    <span class="gi">0</span>
-                    <span class="p">; </span>
-                    <span class="na">i </span>
-                    <span class="p"> < directionArray.Length; </span>
-                    <span class="na">i</span>
-                    <span class="p">++) {</span>
-                    <span class="k">if </span>
-                    <span class="kc">(CheckForCollidableObjects</span>
-                    <span class="p">(directionArray[</span>
-                    <span class="na">i</span>
-                    <span class="p">], collidableObjects))</span>
-                    <span class="p">possibleMoveTiles[</span>
-                    <span class="na">i</span>
-                    <span class="p">].</span>
-                    <span class="kc">SetActive</span>
-                    <span class="p">(</span>
-                    <span class="kd">false</span>
-                    <span class="p">);</span>
-                    <span class="k">else</span>
-                    <span class="p">possibleMoveTiles[</span>
-                    <span class="na">i</span>
-                    <span class="p">].</span>
-                    <span class="kc">SetActive</span>
-                    <span class="p">(</span>
-                    <span class="kd">true</span>
-                    <span class="p">);</span>
-                    <span class="p">}</span>
-                    <span class="p">}</span>
-  
-                    CheckForCollidableObjects(Vector3 direction, LayerMask layer) {
-                    Collider2D col; foreach(Transform character in Characters) { col
-                    = Physics2D.OverlapPointc(character.position + direction,
-                    layer); if (Collider != null) return true; } return false; }
-                  </code>
-                </pre>
-               </div>
-              </div>
+              <pre class="highlight">
+                <code class="language-csharp">
+                  public void CheckPossibleMovements () {
+                    for(int i = 0; i < directionArray.Length; i++) {
+                      if(CheckForCollidableObjects(directionArray[i], collidableObjects))
+                        possibleMoveTiles[i].SetActive(false);
+                      else
+                        possibleMoveTiles[i].SetActive(true);
+                    }
+                  }
+                  CheckForCollidableObjects(Vector3 direction, LayerMask layer) {
+                    Collider2D col; 
+                    foreach(Transform character in Characters) 
+                    { 
+                      col= Physics2D.OverlapPointc(character.position + direction, layer); 
+                      if (Collider != null) 
+                        return true; 
+                    } 
+                    return false; 
+                  }
+                </code>
+              </pre>
             </p>
           </div>
         </div>
