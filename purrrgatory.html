@@ -93,7 +93,7 @@
                       Collider2D col; 
                       foreach(Transform character in Characters) 
                       { 
-                        col = Physics2D.OverlapPointc(character.position + direction, layer); 
+                        col  = Physics2D.OverlapPointc(character.position + direction, layer); 
                         if (col != null) 
                           return true; 
                       } 
