@@ -80,24 +80,26 @@
               finding valid movement options:
               <pre class="highlight">
                 <code class="language-csharp">
-                  public void CheckPossibleMovements () {
-                    for(int i = 0; i < directionArray.Length; i++) {
-                      if(CheckForCollidableObjects(directionArray[i], collidableObjects))
-                        possibleMoveTiles[i].SetActive(false);
-                      else
-                        possibleMoveTiles[i].SetActive(true);
+                  <p>                  
+                    public void CheckPossibleMovements () {
+                      for(int i = 0; i < directionArray.Length; i++) {
+                        if(CheckForCollidableObjects(directionArray[i], collidableObjects))
+                          possibleMoveTiles[i].SetActive(false);
+                        else
+                          possibleMoveTiles[i].SetActive(true);
+                      }
                     }
-                  }
-                  CheckForCollidableObjects(Vector3 direction, LayerMask layer) {
-                    Collider2D col; 
-                    foreach(Transform character in Characters) 
-                    { 
-                      col= Physics2D.OverlapPointc(character.position + direction, layer); 
-                      if (Collider != null) 
-                        return true; 
-                    } 
-                    return false; 
-                  }
+                    CheckForCollidableObjects(Vector3 direction, LayerMask layer) {
+                      Collider2D col; 
+                      foreach(Transform character in Characters) 
+                      { 
+                        col= Physics2D.OverlapPointc(character.position + direction, layer); 
+                        if (Collider != null) 
+                          return true; 
+                      } 
+                      return false; 
+                    }
+                  </p>
                 </code>
               </pre>
             </p>
