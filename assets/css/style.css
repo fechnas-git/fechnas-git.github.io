@@ -898,6 +898,7 @@ pre[class*="language-"] {
   color: #3669ac;
 }
 
+.token.unityfunc,
 .token.function,
 .token.deleted,
 .language-autohotkey .token.tag {

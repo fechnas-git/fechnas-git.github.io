@@ -198,7 +198,7 @@
 
       private IEnumerator MoveToDir() {
         Vector3 originalPosition = transform.position;
-        Vector3 target position = originalPosition - Pathfinding.GetDirection(transform.position);
+        Vector3 targetPosition = originalPosition - Pathfinding.GetDirection(transform.position);
 
         while(elapsedTime &lt; 0.2f) {
           transform.position = Vector3.Lerp(originalPosition, targetPosition, elapsedTime / 0.2f);
