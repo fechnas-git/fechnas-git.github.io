@@ -134,16 +134,16 @@
       }
     
     private void LockControl() {
-      if(enemiesInRange.Count &LessSlantEqual; 0) {
+      if(enemiesInRange.Count &lt;= 0) {
         playerMoves = 0;
         return;
       }
-      FadeTiles(possibleMoveTiles, new Color(0.4f, 0.4f, 0.4f, 0.4f));
+      FadeTiles(possibleMoveTiles, new Color (0.4f, 0.4f, 0.4f, 0.4f));
       isPlayerTurn = false;
     }
 
     private void UnlockControl() {
-      FadeTiles(possibleMoveTiles, new Color(1f, 1f, 1f, 1f));
+      FadeTiles(possibleMoveTiles, new Color (1f, 1f, 1f, 1f));
       playerMoves = 0;
       isPlayerTurn = true;
     }
