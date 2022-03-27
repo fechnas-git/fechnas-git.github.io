@@ -225,6 +225,40 @@
         }
       }
     </code></pre>
+            <p>
+              Enemy turns happen in two phases, the movement and the attack
+              phase. First, the enemy lerps to the target position depending on
+              the shortest path to the nearest player character. Then, the enemy
+              looks for a collidable Player in any direction. The range can
+              differ between melee and ranged enemies and is dependent on the
+              corresponding enemy class. If a collider is found, the player
+              character is attacked and the enemies' attackpower decremented.
+              After all enemies had their turn, the game reverts back to the
+              players' turn.
+            </p>
+          </div>
+        </div>
+        <div class="contentwrap">
+          <div class="contentdescription">
+            <h2 style="text-transform: uppercase">Sound design</h2>
+            <p>
+              With Lena's help for some character voices, I was also responsible
+              for sound design and composing in Escape from Purrrgatory. Below
+              is a short gameplay video to showcase features and sound, as well
+              as an audio player for the introduction level theme.
+            </p>
+            <video controls>
+              <source
+                src="assets/music/purrrgatorysound.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <audio controls>
+              <source
+                src="assets/music/purrrgatorymusic.mp3"
+                type="audio/mpeg"
+              />
+            </audio>
           </div>
         </div>
       </section>

@@ -637,7 +637,7 @@ Prism.languages.csharp = Prism.languages.extend("clike", {
   number: /\b-?(0x)?\d*\.?\d+\b/g,
   unityfunc: /\b(GetComponent)\b/g,
   unityvar:
-    /\b(Vector3|LayerMask|Transform|Collider2D|Physics2D|Enemy|Transform)\b/g,
+    /\b(Vector3|LayerMask|Transform|Collider2D|Physics2D|Enemy|PlayerCharacter|Transform)\b/g,
   literal:
     /\b(i|Time|deltaTime|elapsedTime|Pathfinding|transform|dir|collidablePlayers|attackPower|targetPosition|originalPosition|IEnumerator|directionArray|Length|collidableObjects|possibleMoveTiles|col|direction|layer|character|Characters|position|isPlayerTurn|playerMoves|enemiesInRange|enemy|Count|endTurnButton|interactable)\b/g,
 });
