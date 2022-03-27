@@ -638,7 +638,7 @@ Prism.languages.csharp = Prism.languages.extend("clike", {
   unityvar:
     /\b(Vector3|LayerMask|Transform|Collider2D|Physics2D|Enemy|Color)\b/g,
   literal:
-    /\b(i|directionArray|Length|collidableObjects|possibleMoveTiles|col|direction|layer|character|Characters|position|playerMoves|enemiesInRange|enemy|Count|endTurnButton|interactable)\b/g,
+    /\b(i|directionArray|Length|collidableObjects|possibleMoveTiles|col|direction|layer|character|Characters|position|isPlayerTurn|playerMoves|enemiesInRange|enemy|Count|endTurnButton|interactable)\b/g,
 });
 Prism.languages.go = Prism.languages.extend("clike", {
   keyword:
