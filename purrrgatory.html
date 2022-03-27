@@ -78,7 +78,7 @@
               valid movement tile. Two basic functions handled the logic for
               finding valid movement options:
             </p>
-            <pre class="highlight"><code class="language-csharp">               
+            <pre class="highlight"><code class="language-csharp">
     public void CheckPossibleMovements() {
       for(int i = 0; i &lt; directionArray.Length; i++) {
         if(CheckForCollidableObjects(directionArray[i], collidableObjects))
@@ -107,6 +107,63 @@
               false. If there is no collidable object in the corresponding
               direction, the movement tile is activated and can be clicked to
               move towards.
+            </p>
+            <br />
+            <p>
+              The games' turnbased system consists of two states, the player
+              turn and the enemy turn. Therefore we decided for a simple
+              implementation tracking a boolean flag for the players' turn. If
+              the player used up their pool of valid options, they have to
+              confirm their turn by clicking the end turn button. The logic is
+              implemented as such:
+            </p>
+            <pre class="hightlight"><code class="language-csharp">
+    public void IncrementMoves() {
+      playerMoves++;
+      UpdateShortestPath();
+
+      if(playerMoves == 2) {
+        LockControl();
+      }
+    }
+
+    //Updates the shortest path from any enemy in interest range to the player
+    private void UpdateShortesPath() {
+      foreach(Enemy enemy in enemiesInRange) {
+        enemy.FindShortestPath();
+      }
+    
+    private void LockControl() {
+      if(enemiesInRange.Count &LessSlantEqual; 0) {
+        playerMoves = 0;
+        return;
+      }
+      FadeTiles(possibleMoveTiles, new Color(0.4f, 0.4f, 0.4f, 0.4f));
+      isPlayerTurn = false;
+    }
+
+    private void UnlockControl() {
+      FadeTiles(possibleMoveTiles, new Color(1f, 1f, 1f, 1f));
+      playerMoves = 0;
+      isPlayerTurn = true;
+    }
+
+    //The function called by clicking the end turn button
+    public void EndTurn() {
+      endTurnButton.interactable = false;
+      isPlayerTurn = false;
+      StartCoroutine(EnemyTurn());
+    }
+    </code></pre>
+            <p>
+              Every time a player moves, a new shortest path has to be
+              calculated. The pathfinding works with a modified A* algorithm
+              implemented by Daniil. When a player used up their moves, their
+              control gets locked until their next turn. If there is no enemies
+              in interest range of the pathfinder, the players' turn doesn't end
+              and instead starts over. Otherwise, the enemy turn starts and is
+              executed, after which the control is unlocked again and the player
+              turn starts again.
             </p>
           </div>
         </div>
