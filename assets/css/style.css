@@ -804,7 +804,7 @@ pre[class*="language-"] {
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1.2em;
 
   -moz-tab-size: 4;
@@ -855,7 +855,7 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #4e753f;
+  color: #7ebb66;
   font-style: italic;
 }
 
@@ -865,7 +865,7 @@ pre[class*="language-"] {
 
 .token.class-name,
 .token.unityvar {
-  color: #a3338b;
+  color: #f956d6;
 }
 
 .token.string,
@@ -888,14 +888,14 @@ pre[class*="language-"] {
 .token.property,
 .token.regex,
 .token.inserted {
-  color: #3669ac;
+  color: #579fff;
 }
 
 .token.atrule,
 .token.keyword,
 .token.attr-name,
 .language-autohotkey .token.selector {
-  color: #3669ac;
+  color: #579fff;
 }
 
 .token.unityfunc,
@@ -908,7 +908,7 @@ pre[class*="language-"] {
 .token.tag,
 .token.selector,
 .language-autohotkey .token.keyword {
-  color: #00009f;
+  color: #579fff;
 }
 
 .token.important,
