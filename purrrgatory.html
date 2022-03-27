@@ -87,7 +87,7 @@
           possibleMoveTiles[i].SetActive(true);
       }
     }
-    private void CheckForCollidableObjects(Vector3 direction, LayerMask layer) {
+    private bool CheckForCollidableObjects(Vector3 direction, LayerMask layer) {
       Collider2D col; 
       foreach(Transform character in Characters) 
       { 
@@ -117,7 +117,7 @@
               confirm their turn by clicking the end turn button. The logic is
               implemented as such:
             </p>
-            <pre class="hightlight"><code class="language-csharp">
+            <pre class="highlight"><code class="language-csharp">
     public void IncrementMoves() {
       playerMoves++;
       UpdateShortestPath();
@@ -128,7 +128,7 @@
     }
 
     //Updates the shortest path from any enemy in interest range to the player
-    private void UpdateShortesPath() {
+    private void UpdateShortestPath() {
       foreach(Enemy enemy in enemiesInRange) {
         enemy.FindShortestPath();
       }
@@ -146,6 +146,7 @@
       FadeTiles(possibleMoveTiles, new Color(1f, 1f, 1f, 1f));
       playerMoves = 0;
       isPlayerTurn = true;
+      endTurnButton.interactable = true;
     }
 
     //The function called by clicking the end turn button
@@ -165,6 +166,65 @@
               executed, after which the control is unlocked again and the player
               turn starts again.
             </p>
+            <br />
+            <p>
+              Each enemy turn consists of at least one enemy move including an
+              attack if the enemy is in attack range, if at least one enemy is
+              present in pathfinding interest range. When attacking, the damage
+              given of the next attack reduces by 1. This holds true for both
+              the player and the enemy after an attack.
+            </p>
+            <pre class="highlight"><code class="language-csharp">
+      //In TurnController class
+      private IEnumerator EnemyTurn() {
+        if(enemiesInRange.Count &lt;= 0) {
+          UnlockControl();
+          yield break;
+        }
+        
+        foreach(Enemy enemy in enemiesInRange) {
+          yield return StartCoroutine(enemy.Move());
+        }
+
+        UnlockControl();
+        UpdateShortestPath();
+      }
+
+      //In Enemy class
+      public IEnumerator Move() {
+        yield return MoveToDir();
+        CheckForCollidableCharacters(this.transform);
+      }
+
+      private IEnumerator MoveToDir() {
+        Vector3 originalPosition = transform.position;
+        Vector3 target position = originalPosition - Pathfinding.GetDirection(transform.position);
+
+        while(elapsedTime &lt; 0.2f) {
+          transform.position = Vector3.Lerp(originalPosition, targetPosition, elapsedTime / 0.2f);
+          elapsedTime += Time.deltaTime;
+          yield return null;
+        }
+
+        transform position = targetPosition;
+      }
+
+      private void CheckForCollidableCharacters(Transform enemy) {
+        Collider2D col;
+
+        foreach(Vector3 dir in directionArray) {
+          col = Physics2D.OverlapPoint(enemy.position + dir, collidablePlayers);
+          if(col != null) {
+            Attack(col);
+          }
+        }
+
+        private void Attack(Collider2D col) {
+          col.transform.GetComponent&lt;PlayerCharacter&gt;().ReceiveDamage(attackPower);
+          attackPower--;
+        }
+      }
+    </code></pre>
           </div>
         </div>
       </section>
