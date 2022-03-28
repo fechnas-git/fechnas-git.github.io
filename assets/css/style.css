@@ -581,6 +581,7 @@ dt {
   max-width: 100%;
   background: blue;
   margin: 6px auto;
+  margin-left: 00px;
 }
 #header nav ul {
   list-style-type: none;
@@ -633,8 +634,10 @@ dt {
   margin-left: 6px;
 }
 #header nav ul li.title {
-  float: right;
-  margin-right: 10px;
+  float: left;
+  padding-right: 400px;
+  height: 60px;
+  width: auto;
   font-size: 11px;
 }
 
@@ -755,6 +758,11 @@ body .section-content {
   margin-bottom: 125px;
 }
 
+.contentwrap-project {
+  display: flex;
+  margin-bottom: 25px;
+}
+
 .contentwrap p {
   float: right;
 }
@@ -783,7 +791,32 @@ body .section-content {
   margin-right: auto;
 }
 
+.audioimg {
+  border-radius: 4px;
+}
+
 .projectcontent {
+  flex-direction: column;
+}
+
+.contentgif {
+  width: 700px;
+  height: auto;
+  margin-right: 30px;
+}
+
+.purrrgatory-ava {
+  width: 200px;
+  height: 200px;
+  margin: 0px 10px;
+}
+
+.title-purr {
+  display: flex;
+  max-width: 1000px;
+  border: 0;
+  outline: none;
+  overflow: hidden;
   flex-direction: column;
 }
 

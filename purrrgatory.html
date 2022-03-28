@@ -20,21 +20,29 @@
     <div class="sticky" id="header"></div>
     <div class="wrapper">
       <section class="introduction">
-        <div class="title">
-          <h1>Escape from Purrrgatory</h1>
-          <h3 style="color: #d7cfbe">
-            Early 2021 marked the true beginning of my journey in game
-            development. Escape from Purrrgatory was the first project outside
-            of personal prototypes and mini projects that I had the opportunity
-            to work on. I learned alot from my teammates about the whole process
-            of developing a game from scratch. It was a valuable and fun
-            experience that only further deepened my desire to develop games.
-          </h3>
+        <div class="title-purr">
+          <h1 style="margin-left: 220px">Escape from Purrrgatory</h1>
+          <div class="contentwrap-project">
+            <image
+              class="purrrgatory-ava"
+              src="assets/images/CrowD.png"
+            ></image>
+            <h3 style="color: #d7cfbe">
+              Early 2021 marked the true beginning of my journey in game
+              development. Escape from Purrrgatory was the first project outside
+              of personal prototypes and mini projects that I had the
+              opportunity to work on. I learned alot from my teammates about the
+              whole process of developing a game from scratch. It was a valuable
+              and fun experience that only further deepened my desire to develop
+              games.
+            </h3>
+            <image class="purrrgatory-ava" src="assets/images/CatD.png"></image>
+          </div>
         </div>
       </section>
       <section class="projectcontent">
         <div class="contentwrap">
-          <image class="projectimg" src="assets/images/purrrgatory.png"></image>
+          <image class="purrrgatory-ava" src="assets/images/FoxD.png"></image>
           <div class="contentdescription">
             <h2 style="text-transform: uppercase">The idea</h2>
             <p>
@@ -51,7 +59,10 @@
           </div>
         </div>
         <div class="contentwrap">
-          <image class="projectimg" src="assets/images/purrrgatory.png"></image>
+          <image
+            class="purrrgatory-ava"
+            src="assets/images/BadgerD.png"
+          ></image>
           <div class="contentdescription">
             <h2 style="text-transform: uppercase">The process</h2>
             <p>
@@ -98,16 +109,22 @@
       return false; 
     }</code>
             </pre>
-            <p>
-              The 4 movement directions are stored as corresponding vectors in
-              an array. In every players' turn and after every movement, it is
-              checked if any collidable objects are in place of any of the 4
-              directions correlated to the 4 characters' positions. If so, the
-              movement option is invalidated by setting the movement tile to
-              false. If there is no collidable object in the corresponding
-              direction, the movement tile is activated and can be clicked to
-              move towards.
-            </p>
+            <div class="contentwrap-project">
+              <img
+                class="contentgif"
+                src="assets/images/purrrgatory-move.gif"
+              />
+              <p>
+                The 4 movement directions are stored as corresponding vectors in
+                an array. In every players' turn and after every movement, it is
+                checked if any collidable objects are in place of any of the 4
+                directions correlated to the 4 characters' positions. If so, the
+                movement option is invalidated by setting the movement tile to
+                false. If there is no collidable object in the corresponding
+                direction, the movement tile is activated and can be clicked to
+                move towards.
+              </p>
+            </div>
             <br />
             <p>
               The games' turnbased system consists of two states, the player
@@ -156,16 +173,22 @@
       StartCoroutine(EnemyTurn());
     }
     </code></pre>
-            <p>
-              Every time a player moves, a new shortest path has to be
-              calculated. The pathfinding works with a modified A* algorithm
-              implemented by Daniil. When a player used up their moves, their
-              control gets locked until their next turn. If there is no enemies
-              in interest range of the pathfinder, the players' turn doesn't end
-              and instead starts over. Otherwise, the enemy turn starts and is
-              executed, after which the control is unlocked again and the player
-              turn starts again.
-            </p>
+            <div class="contentwrap-project">
+              <img
+                class="contentgif"
+                src="assets/images/purrrgatory-attack.gif"
+              />
+              <p>
+                Every time a player moves, a new shortest path has to be
+                calculated. The pathfinding works with a modified A* algorithm
+                implemented by Daniil. When a player used up their moves, their
+                control gets locked until their next turn. If there is no
+                enemies in interest range of the pathfinder, the players' turn
+                doesn't end and instead starts over. Otherwise, the enemy turn
+                starts and is executed, after which the control is unlocked
+                again and the player turn starts again.
+              </p>
+            </div>
             <br />
             <p>
               Each enemy turn consists of at least one enemy move including an
@@ -225,17 +248,23 @@
         }
       }
     </code></pre>
-            <p>
-              Enemy turns happen in two phases, the movement and the attack
-              phase. First, the enemy lerps to the target position depending on
-              the shortest path to the nearest player character. Then, the enemy
-              looks for a collidable Player in any direction. The range can
-              differ between melee and ranged enemies and is dependent on the
-              corresponding enemy class. If a collider is found, the player
-              character is attacked and the enemies' attackpower decremented.
-              After all enemies had their turn, the game reverts back to the
-              players' turn.
-            </p>
+            <div class="contentwrap-project">
+              <img
+                class="contentgif"
+                src="assets/images/purrrgatory-turn.gif"
+              />
+              <p>
+                Enemy turns happen in two phases, the movement and the attack
+                phase. First, the enemy lerps to the target position depending
+                on the shortest path to the nearest player character. Then, the
+                enemy looks for a collidable Player in any direction. The range
+                can differ between melee and ranged enemies and is dependent on
+                the corresponding enemy class. If a collider is found, the
+                player character is attacked and the enemies' attackpower
+                decremented. After all enemies had their turn, the game reverts
+                back to the players' turn.
+              </p>
+            </div>
           </div>
         </div>
         <div class="contentwrap">
