@@ -767,9 +767,6 @@ body .section-content {
   float: right;
 }
 
-.random {
-}
-
 @media print, screen and (max-width: 720px) {
   #title .credits {
     display: block;
@@ -808,13 +805,13 @@ body .section-content {
   margin-right: 30px;
 }
 
-.purrrgatory-ava {
+.content-ava {
   width: 200px;
   height: 200px;
   margin: 0px 10px;
 }
 
-.title-purr {
+.title-content {
   display: flex;
   max-width: 1000px;
   border: 0;

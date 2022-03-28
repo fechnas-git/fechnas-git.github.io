@@ -14,11 +14,113 @@
         $("#footer").load("footer.html");
       });
     </script>
+    <script src="assets/js/codeformatter.js"></script>
   </head>
   <body>
     <div class="sticky" id="header"></div>
     <div class="wrapper">
-      <h1>Snake Snacks</h1>
+      <section class="introduction">
+        <div class="title-content">
+          <h1 style="margin-left: 220px">Snake Snacks</h1>
+          <div class="contentwrap-project">
+            <image
+              class="content-ava"
+              src="assets/images/snakesnacksproto.PNG"
+            ></image>
+            <h3 style="color: #d7cfbe">
+              Snake Snacks is a fun and quirky adaptation of the classic mobile
+              game hit Snake. The idea emerged out of a desire to program a fun
+              thing, so we brainstormed a bit. The idea that we ended up
+              prototyping was Snake Snacks. Though it is still in a very basic
+              state and pretty simple looking, playing the game is already quite
+              fun! For Snake Snacks, I am the sole programmer with Lena
+              providing ideas and concept art.
+            </h3>
+            <image
+              class="content-ava"
+              src="assets/images/snakesnacks.png"
+            ></image>
+          </div>
+        </div>
+      </section>
+      <section class="projectcontent">
+        <div class="contentwrap">
+          <image
+            class="content-ava"
+            src="assets/images/snakesnacksprotoside.PNG"
+          ></image>
+          <div class="contentdescription">
+            <h2 style="text-transform: uppercase">The idea</h2>
+            <p>
+              In Snake Snacks, instead of controlling the snake itself, you
+              place the green snacks and the snake finds it's own way to it. The
+              snake is not very smart though, and thus it's up to the player to
+              guide the snake in a way to avoid enemies and obstacles. If no
+              snack is present, the snake will continously move forward, even
+              biting it's own tail or running into enemies if not distracted by
+              the placement of a new snack. A round of Snake Snacks is short,
+              fun and engaging!
+            </p>
+          </div>
+        </div>
+        <div class="contentwrap">
+          <image
+            class="content-ava"
+            src="assets/images/snakesnacksside.PNG"
+          ></image>
+          <div class="contentdescription">
+            <h2 style="text-transform: uppercase">The process</h2>
+            <p>
+              The idea emerged out of a brainstorming for fun minigames to
+              prototype as a pastime activity. It is simply built and contains
+              no complex logic, but it works and it's fun, two main requirements
+              for a good game in my book! On a more serious note, working on
+              Snake Snacks was a fun exercise, and it turned out to be so
+              promising that it might grow into a fully fledged mobile game in
+              the future. So far in the prototype, although no graphics were
+              implemented, there's already 2 types of obstacles and the basic
+              gameplay is fully implemented.
+            </p>
+          </div>
+        </div>
+        <div class="contentwrap">
+          <div class="contentdescription">
+            <h2 style="text-transform: uppercase">The features</h2>
+            <p>
+              The snake in Snake Snacks is not very smart. In fact, it is rather
+              predictable: It will always move vertically towards the food and
+              then horizontally, but never turn around 180 degrees. Not only is
+              this pattern rather simple to implement, it is also simple for the
+              players to follow, predict and plan their moves according to the
+              snakes movement. The implementation boils down to a rather
+              unprestigious while-if loop.
+            </p>
+            <pre class="highlight"><code class="language-csharp">
+    public void FindPath() {
+      while(foodAmount > 0) {
+        if(snake.transform.position.x &gt; food.transform.position.x)
+          snake.SetDirection(Direction.left);
+        else if(snake.transform.position.x &lt; food.transform.position.x)
+          snake.SetDirection(Direction.right);
+
+        if(snake.transform.position.y &gt; food.transform.position.y)
+          snake.SetDirection(Direction.down);
+        else if(snake.transform.position.y &lt; food.transform.position.y)
+          snake.SetDirection(Direction.up);
+
+      }
+    }
+            </code></pre>
+            <div class="contentwrap-project">
+              <img
+                class="contentgif"
+                src="assets/images/purrrgatory-attack.gif"
+              />
+              <p>Admittedly not the most optimal solution,</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <div id="footer"></div>
   </body>
