@@ -63,29 +63,11 @@
             </p>
           </div>
         </div>
-        <div class="contentwrap">
-          <image
-            class="content-ava"
-            src="assets/images/snakesnacksside.PNG"
-          ></image>
-          <div class="contentdescription">
-            <h2 style="text-transform: uppercase">The process</h2>
-            <p>
-              The idea emerged out of a brainstorming for fun minigames to
-              prototype as a pastime activity. It is simply built and contains
-              no complex logic, but it works and it's fun, two main requirements
-              for a good game in my book! On a more serious note, working on
-              Snake Snacks was a fun exercise, and it turned out to be so
-              promising that it might grow into a fully fledged mobile game in
-              the future. So far in the prototype, although no graphics were
-              implemented, there's already 2 types of obstacles and the basic
-              gameplay is fully implemented.
-            </p>
-          </div>
-        </div>
+
         <div class="contentwrap">
           <div class="contentdescription">
             <h2 style="text-transform: uppercase">The features</h2>
+            <h3>Movement Controls</h3>
             <p>
               The snake in Snake Snacks is not very smart. In fact, it is rather
               predictable: It will always move vertically towards the food and
@@ -96,8 +78,14 @@
               unprestigious while-if loop.
             </p>
             <pre class="highlight"><code class="language-csharp">
+    public void OnLMBClick() {
+      Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+      if(food.Amount &lt; 1)
+        food.Create(grid.WorldToCell(pos));
+    }
+
     public void FindPath() {
-      while(foodAmount > 0) {
+      while(food.Amount > 0) {
         if(snake.transform.position.x &gt; food.transform.position.x)
           snake.SetDirection(Direction.left);
         else if(snake.transform.position.x &lt; food.transform.position.x)
@@ -112,12 +100,85 @@
     }
             </code></pre>
             <div class="contentwrap-project">
-              <img
-                class="contentgif"
-                src="assets/images/purrrgatory-attack.gif"
-              />
-              <p>Admittedly not the most optimal solution,</p>
+              <img class="contentgif" src="assets/images/snake-move.gif" />
+              <p>
+                Albeit only one of many possibilities, it's a sufficient
+                solution for our cause. It's a predictable algorithm and not
+                influencing perfomance. On click of the left mouse button, a
+                food Object is created, if there is no other food object yet.
+                This serves as a movement beacon for the snake, who will
+                immediately try to get to the food Object. It will ignore any
+                obstacles or it's own tail if it might intercept the path,
+                therefore players must plan carefully and predict the snakes
+                movement beforehand.
+              </p>
             </div>
+            <h3>Obstacles and Enemies</h3>
+            <p>
+              To make the gameplay more dynamic, we thought about implementing
+              different enemies and obstacles. Two of those ideas made it into
+              the game so far: The "Hedgehog", a stationary obstacle and the
+              "Racoon", a thief who is trying to steal the snacks.
+            </p>
+            <pre class="highlight"><code class="language-csharp">
+    //A Dictionary containing Prefabs with EnemyTypes as Keys
+    private Dictionary&lt;IEnemy, GameObject&gt; enemiesByType = new Dictionary&lt;IEnemy, GameObject&gt;();
+    
+    public void CreateEnemy(IEnemy type) {
+      //The playing field is a 20x10 grid centered around 0, therefore the Range for the random position
+      Vector2 randomPos = new Vector3(Random.Range(-10, 10), Random.Range(-5, 5));
+
+      GameObject enemyObj = GetEnemyByType(type);
+      if(enemyObj != null) {
+        Instantiate(enemyObj, randomPos);
+      }
+      
+    }
+
+    public GameObject GetEnemyByType(IEnemy type) {
+      if(enemiesByType.ContainsKey(type)) {
+        return enemiesByType[type];
+      } else return null;
+    }
+                </code></pre>
+            <div class="contentwrap-project">
+              <img class="contentgif" src="assets/images/snake-hungry.gif" />
+              <p>
+                The hedgehog is a stationary enemy. It serves as a obstacle that
+                players have to navigate around. In our prototype, the hedgehog
+                is resembled by the red square. The racoon is portrayed by the
+                yellow square. It will find a food in interest range and then
+                move towards it, similarly to the snake. When the snake gets to
+                the food first, the racoon will stop in place and wait for the
+                next snack to appear. Otherwise, it will steal it and the snake
+                will collide with the racoon if the player isn't reacting fast
+                enough. If the food is too far away, it will also stay in place.
+                Enemies are instantiated by utilizing a sort of mini-factory. A
+                Dictionary-class holding all types of enemies. They can be
+                fetched by calling a GetEnemyType function containing a proper
+                enemy type.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contentwrap">
+          <image
+            class="content-ava"
+            src="assets/images/snakesnacksside.PNG"
+          ></image>
+          <div class="contentdescription">
+            <h2 style="text-transform: uppercase">Postmortem</h2>
+            <p>
+              The idea emerged out of a brainstorming for fun minigames to
+              prototype as a pastime activity. It is simply built and contains
+              no complex logic, but it works and it's fun, two main requirements
+              for a good game in my book! On a more serious note, working on
+              Snake Snacks was a fun exercise, and it turned out to be so
+              promising that it might grow into a fully fledged mobile game in
+              the future. So far in the prototype, although no graphics were
+              implemented, there's already 2 types of obstacles and the basic
+              gameplay is fully implemented.
+            </p>
           </div>
         </div>
       </section>

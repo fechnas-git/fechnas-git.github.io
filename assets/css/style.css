@@ -48,7 +48,7 @@ a:active {
   outline: 0;
 }
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
   margin: 0.67em 0;
 }
 h2 {
@@ -458,9 +458,7 @@ h2,
 h3 {
   line-height: 1.1;
 }
-h1 {
-  font-size: 28px;
-}
+
 h2 {
   font-size: 24px;
 }
@@ -761,6 +759,10 @@ body .section-content {
 .contentwrap-project {
   display: flex;
   margin-bottom: 25px;
+}
+
+.contentwrap-project p {
+  margin-top: 20px;
 }
 
 .contentwrap p {

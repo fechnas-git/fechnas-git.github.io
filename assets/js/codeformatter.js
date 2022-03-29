@@ -637,9 +637,9 @@ Prism.languages.csharp = Prism.languages.extend("clike", {
   number: /\b-?(0x)?\d*\.?\d+\b/g,
   unityfunc: /\b(GetComponent)\b/g,
   unityvar:
-    /\b(Vector3|LayerMask|Transform|Collider2D|Physics2D|Enemy|PlayerCharacter|Transform|Direction)\b/g,
+    /\b(Vector3|Random|Vector2|LayerMask|Dictionary|GameObject|Transform|Collider2D|Physics2D|Enemy|PlayerCharacter|Transform|Direction)\b/g,
   literal:
-    /\b(i|x|y|up|down|left|right|food|snake|foodAmount|Time|deltaTime|elapsedTime|Pathfinding|transform|dir|collidablePlayers|attackPower|targetPosition|originalPosition|IEnumerator|directionArray|Length|collidableObjects|possibleMoveTiles|col|direction|layer|character|Characters|position|isPlayerTurn|playerMoves|enemiesInRange|enemy|Count|endTurnButton|interactable)\b/g,
+    /\b(i|x|y|pos|IEnemy|enemiesByType|type|enemyObj|randomPos|Amount|Camera|main|Input|mousePosition|grid|up|down|left|right|food|snake|foodAmount|Time|deltaTime|elapsedTime|Pathfinding|transform|dir|collidablePlayers|attackPower|targetPosition|originalPosition|IEnumerator|directionArray|Length|collidableObjects|possibleMoveTiles|col|direction|layer|character|Characters|position|isPlayerTurn|playerMoves|enemiesInRange|enemy|Count|endTurnButton|interactable)\b/g,
 });
 Prism.languages.go = Prism.languages.extend("clike", {
   keyword:

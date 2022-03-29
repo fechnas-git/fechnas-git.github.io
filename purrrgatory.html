@@ -29,9 +29,9 @@
               development. Escape from Purrrgatory was the first project outside
               of personal prototypes and mini projects that I had the
               opportunity to work on. I learned alot from my teammates about the
-              whole process of developing a game from scratch. It was a valuable
-              and fun experience that only further deepened my desire to develop
-              games.
+              whole process of developing a game from scratch using Unity. It
+              was a valuable and fun experience that only further deepened my
+              desire to develop games.
             </h3>
             <image class="content-ava" src="assets/images/CatD.png"></image>
           </div>
@@ -56,27 +56,9 @@
           </div>
         </div>
         <div class="contentwrap">
-          <image class="content-ava" src="assets/images/BadgerD.png"></image>
-          <div class="contentdescription">
-            <h2 style="text-transform: uppercase">The process</h2>
-            <p>
-              The whole idea for the games' design was thought out by Lena.
-              Anastasiia and Lena discussed and decided on the art direction
-              together. To keep things organized, we utilized a Trello board.
-              Daniil and I held regular feature meetings to discuss splitting up
-              the tasks between us and reviewing implemented features. It was
-              very helpful to work together with a seasoned programmer as I
-              learned alot about writing cleaner code and keeping perfomance in
-              mind thanks to Daniil's feedbacks. Finally we ended up with a
-              finished introduction level including dialogs, AI Pathfinding, UI
-              implementation and all major gameplay features such as powerups
-              and three different types of enemies.
-            </p>
-          </div>
-        </div>
-        <div class="contentwrap">
           <div class="contentdescription">
             <h2 style="text-transform: uppercase">The features</h2>
+            <h3>Movement Controls</h3>
             <p>
               The game is fully controlled with the mouse. Attacking and turning
               works via UI buttons, whereas movement is done by clicking on a
@@ -120,6 +102,7 @@
               </p>
             </div>
             <br />
+            <h3>Turnbased Combat System</h3>
             <p>
               The games' turnbased system consists of two states, the player
               turn and the enemy turn. Therefore we decided for a simple
@@ -174,16 +157,17 @@
               />
               <p>
                 Every time a player moves, a new shortest path has to be
-                calculated. The pathfinding works with a modified A* algorithm
-                implemented by Daniil. When a player used up their moves, their
-                control gets locked until their next turn. If there is no
-                enemies in interest range of the pathfinder, the players' turn
-                doesn't end and instead starts over. Otherwise, the enemy turn
-                starts and is executed, after which the control is unlocked
-                again and the player turn starts again.
+                calculated. The pathfinding works with a modified A* algorithm.
+                When a player used up their moves, their control gets locked
+                until their next turn. If there is no enemies in interest range
+                of the pathfinder, the players' turn doesn't end and instead
+                starts over. Otherwise, the enemy turn starts and is executed,
+                after which the control is unlocked again and the player turn
+                starts again.
               </p>
             </div>
             <br />
+            <h3>Enemy Logic</h3>
             <p>
               Each enemy turn consists of at least one enemy move including an
               attack if the enemy is in attack range, if at least one enemy is
@@ -262,26 +246,50 @@
           </div>
         </div>
         <div class="contentwrap">
+          <div class="contentwrap-project">
+            <div class="contentdescription">
+              <video controls>
+                <source
+                  src="assets/music/purrrgatorysound.mp4"
+                  type="video/mp4"
+                />
+              </video>
+              <audio controls>
+                <source
+                  src="assets/music/purrrgatorymusic.mp3"
+                  type="audio/mpeg"
+                />
+              </audio>
+            </div>
+            <div class="contentdescription" style="margin-left: 30px">
+              <h2 style="text-transform: uppercase">Sound design</h2>
+              <p>
+                With Lena's help for some character voices, I was also
+                responsible for sound design and composing in Escape from
+                Purrrgatory. Below is a short gameplay video to showcase
+                features and sound, as well as an audio player for the
+                introduction level theme.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contentwrap">
+          <image class="content-ava" src="assets/images/BadgerD.png"></image>
           <div class="contentdescription">
-            <h2 style="text-transform: uppercase">Sound design</h2>
+            <h2 style="text-transform: uppercase">Postmortem</h2>
             <p>
-              With Lena's help for some character voices, I was also responsible
-              for sound design and composing in Escape from Purrrgatory. Below
-              is a short gameplay video to showcase features and sound, as well
-              as an audio player for the introduction level theme.
+              The whole idea for the games' design was thought out by Lena.
+              Anastasiia and Lena discussed and decided on the art direction
+              together. To keep things organized, we utilized a Trello board.
+              Daniil and I held regular feature meetings to discuss splitting up
+              the tasks between us and reviewing implemented features. It was
+              very helpful to work together with a seasoned programmer as I
+              learned alot about writing cleaner code and keeping perfomance in
+              mind thanks to Daniil's feedbacks. Finally we ended up with a
+              finished introduction level including dialogs, AI Pathfinding, UI
+              implementation and all major gameplay features such as powerups
+              and three different types of enemies.
             </p>
-            <video controls>
-              <source
-                src="assets/music/purrrgatorysound.mp4"
-                type="video/mp4"
-              />
-            </video>
-            <audio controls>
-              <source
-                src="assets/music/purrrgatorymusic.mp3"
-                type="audio/mpeg"
-              />
-            </audio>
           </div>
         </div>
       </section>
