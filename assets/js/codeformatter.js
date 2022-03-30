@@ -631,15 +631,15 @@ Prism.languages.gherkin = {
 };
 Prism.languages.csharp = Prism.languages.extend("clike", {
   keyword:
-    /\b(2f|1f|4f|abstract|as|base|bool|break|byte|case|catch|char|checked|class|const|continue|decimal|default|delegate|do|double|else|enum|event|explicit|extern|false|finally|fixed|float|for|foreach|goto|if|implicit|in|int|interface|internal|is|lock|long|namespace|new|null|object|operator|out|override|params|private|protected|public|readonly|ref|return|sbyte|sealed|short|sizeof|stackalloc|static|string|struct|switch|this|throw|true|try|typeof|uint|ulong|unchecked|unsafe|ushort|using|virtual|void|volatile|while|add|alias|ascending|async|await|descending|dynamic|from|get|global|group|into|join|let|orderby|partial|remove|select|set|value|var|where|yield)\b/g,
+    /\b(2f|1f|4f|SerializeField|abstract|as|base|zero|bool|break|byte|case|catch|char|checked|class|const|continue|decimal|default|delegate|do|double|else|enum|event|explicit|extern|false|finally|fixed|float|for|foreach|goto|if|implicit|in|int|interface|internal|is|lock|long|namespace|new|null|object|operator|out|override|params|private|protected|public|readonly|ref|return|sbyte|sealed|short|sizeof|stackalloc|static|string|struct|switch|this|throw|true|try|typeof|uint|ulong|unchecked|unsafe|ushort|using|virtual|void|volatile|while|add|alias|ascending|async|await|descending|dynamic|from|get|global|group|into|join|let|orderby|partial|remove|select|set|value|var|where|yield)\b/g,
   string: /@?("|')(\\?.)*?\1/g,
   preprocessor: /^\s*#.*/gm,
   number: /\b-?(0x)?\d*\.?\d+\b/g,
-  unityfunc: /\b(GetComponent)\b/g,
+  unityfunc: /\b(GetComponent|Load)\b/g,
   unityvar:
-    /\b(Vector3|Random|Vector2|LayerMask|Dictionary|GameObject|Transform|Collider2D|Physics2D|Enemy|PlayerCharacter|Transform|Direction)\b/g,
+    /\b(Vector3|Func|List|IState|Graveyard|MovementManager|Random|CardObject|Card|Vector2|LayerMask|Dictionary|GameObject|Transform|Collider2D|Physics2D|Enemy|PlayerCharacter|Transform|Direction)\b/g,
   literal:
-    /\b(i|x|y|pos|IEnemy|enemiesByType|type|enemyObj|randomPos|Amount|Camera|main|Input|mousePosition|grid|up|down|left|right|food|snake|foodAmount|Time|deltaTime|elapsedTime|Pathfinding|transform|dir|collidablePlayers|attackPower|targetPosition|originalPosition|IEnumerator|directionArray|Length|collidableObjects|possibleMoveTiles|col|direction|layer|character|Characters|position|isPlayerTurn|playerMoves|enemiesInRange|enemy|Count|endTurnButton|interactable)\b/g,
+    /\b(i|x|y|playerPlacement|transitions|endGame|to|predicate|endgame|playerCrown|enemyCrown|IsAlive|enemyPlacement|playerMovement|enemyMovement|playerDeck|enemyDeck|draw|gameEnd|endTurn|NoViableMoves|pos|prefab|shuffle|shuffledDeck|Sprite|usedCards|gameObject|playerHand|durability|item|card|drawnCard|cardObj|obj|handSize|deck|DeadCards|Resources|IEnemy|enemiesByType|type|enemyObj|randomPos|Amount|Camera|main|Input|mousePosition|grid|up|down|left|right|food|snake|foodAmount|Time|deltaTime|elapsedTime|Pathfinding|transform|dir|collidablePlayers|attackPower|targetPosition|originalPosition|IEnumerator|directionArray|Length|collidableObjects|possibleMoveTiles|col|direction|layer|character|Characters|position|isPlayerTurn|playerMoves|enemiesInRange|enemy|Count|endTurnButton|interactable)\b/g,
 });
 Prism.languages.go = Prism.languages.extend("clike", {
   keyword:

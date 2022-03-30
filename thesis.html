@@ -14,11 +14,264 @@
         $("#footer").load("footer.html");
       });
     </script>
+    <script src="assets/js/codeformatter.js"></script>
   </head>
   <body>
     <div class="sticky" id="header"></div>
     <div class="wrapper">
-      <h1>Thesis</h1>
+      <section class="introduction">
+        <div class="title-content">
+          <h1 style="margin-left: 220px">Untitled Bachelor Project</h1>
+          <div class="contentwrap-project">
+            <image
+              class="content-ava"
+              src="assets/images/thesiscrownwhite.png"
+            ></image>
+            <h3 style="color: #d7cfbe">
+              This game is the practical part of Lena's bachelor thesis. My
+              responsibility for this project lies in programming and
+              implementing her ideas. I also use this opportunity of being the
+              sole programmer for a bigger project to work on my expertise and
+              coding skills. For that, I researched basic programming patterns
+              and design principles to apply into the project. Furthermore, I
+              started implementing Unity play tests to get a grip of test driven
+              development processes. So far, we could create a playable
+              prototype of the base gameplay loop.
+            </h3>
+            <image
+              class="content-ava"
+              src="assets/images/thesiscrownblack.png"
+            ></image>
+          </div>
+        </div>
+      </section>
+      <section class="projectcontent">
+        <div class="contentwrap">
+          <image
+            class="content-ava"
+            src="assets/images/thesissword.PNG"
+          ></image>
+          <div class="contentdescription">
+            <h2 style="text-transform: uppercase">The idea</h2>
+            <p>
+              This project is a turnbased deckbuilding strategy game, similiar
+              to chess but as a deckbuilder. Players can build a deck from a set
+              of tiles, each of which have their own functionality, such as
+              tiles that move other tiles, or tiles that can attack or defend.
+              The goal is to capture the enemy crown by colliding an attack tile
+              with it. Players are able to see each others hands as to plan out
+              their moves ahead. Tiles also break after using them too often or
+              acquiring too much damage on a tile. The project is made with
+              Unity.
+            </p>
+          </div>
+        </div>
+
+        <div class="contentwrap">
+          <div class="contentdescription">
+            <h2 style="text-transform: uppercase">The features</h2>
+            <h3>Controls</h3>
+            <p>
+              The game is controlled like a card game, meaning the player draws
+              cards that resemble tiles and drag and drop them onto the playing
+              field. Move-tiles can be placed anywhere, whereas defensive and
+              offensive tiles can only be placed in a specific "placement zone".
+              To save on resources, every time a tile is destroyed, it moves
+              into the graveyard. Once all cards have been drawn, the graveyard
+              is shuffled into the deck again. The graveyard serves as an object
+              pool, meaning that rather than creating new instances, the old
+              objects are reactivated to save on resources and performance.
+            </p>
+            <pre class="highlight"><code class="language-csharp">
+    //In CardObject class
+    [SerializeField]
+    private GameObject prefab
+    [SerializeField]
+    private Transform playerHand;
+
+    private int durability = 2;
+
+    public void Draw(CardObject obj) {
+      Card drawnCard = Instantiate(Resources.Load&lt;GameObject&gt;("Prefabs/UI/Card"), Vector2.zero);
+      drawnCard.transform.SetParent(playerHand);
+      drawnCard.Sprite = obj.Sprite;
+    }
+
+    public void PlayCard(Vector2 pos) {
+      GameObject cardObj = Instantiate(prefab, pos);
+    }
+
+    public void DecrementDurability() {
+      durability--;
+      if(durability &lt;= 0) {
+        Kill(this);
+      }
+    }
+
+    public void Kill(CardObject obj) {
+      Graveyard.DeadCards.Add(obj);
+      obj.gameObject.SetActive(false);
+    }
+
+    public void Reincarnate(CardObject obj, Vector2 pos) {
+      obj.transform.position = pos;
+      obj.durability = 2;
+      obj.SetActive(true);
+    }
+
+    //In CardDeck class
+    public void DrawFromDeck() {
+      if(deck.Count &gt; 0 && handSize &lt; 4) {
+        CardObject drawnCard = deck.Dequeue();
+        drawnCard.Draw(drawnCard);
+        handSize++;
+      } else if (deck.Count == 0 && Graveyard.DeadCards.Count > 0) {
+        Shuffle(Graveyard.DeadCards);
+        DrawFromDeck();
+      }
+    }
+    private void Shuffle(List&lt;CardObject&gt; usedCards) {
+      Random shuffle = new Random();
+
+      var shuffledDeck = usedCards.OrderBy(item => shuffle.Next());
+      Graveyard.DeadCards.Clear();
+      
+      foreach(CardObject card in shuffledDeck) {
+        deck.Enqueue(card);
+      }
+    }
+            </code></pre>
+            <div class="contentwrap-project">
+              <img class="contentgif" src="assets/images/thesis-control.gif" />
+              <p>
+                The logic behind playing cards is fairly simple. The Card class
+                is what is represented in the UI as cards on your hand. They
+                have a draggable property and when dragged onto the playing
+                field, the CardObject class' CreateInstance()-function is
+                called. This summons a card object on the corresponding
+                position. There is some collision handling in the backend to
+                make sure that certain cards can't be put into certain places or
+                on top of each other. Once placed on the field, card objects, or
+                tiles, can interact with each other. Movement tiles move
+                offensive tiles, whereas defensive tiles have other properties,
+                like the wall repelling any offensive tiles back to it's
+                position. Everytime a tile is used, durability is decremented.
+                Offensive tiles get their durability only decremented when
+                attacked by other attackers or towers.
+              </p>
+            </div>
+            <h3>Finite State Machine</h3>
+            <p>
+              For the implementation of the turnbased logic, I made a simple
+              finite state machine with 6 states, Draw, PlayerPlacement,
+              PlayerMovement, EnemyPlacement, EnemyMovement and GameEnd. Each
+              state has it's own class implementing the IState interface. Here
+              is the implementation of this state machine:
+            </p>
+            <pre class="highlight"><code class="language-csharp">
+    
+    void Awake() {
+      //Collection of all states
+      var playerPlacement = new PlayerPlacementState(playerDeck);
+      var playerMovement = new PlayerMovementState();
+      var enemyPlacement = new EnemyPlacementState(enemyDeck);
+      var enemyMovement = new EnemyMovementState();
+      var draw = new DrawState(playerDeck, enemyDeck);
+      var gameEnd = new GameEndState();
+
+      //Transitions for each states added via AddTransition/At-function - first state is from, second state is to, third is condition
+      At(playerPlacement, playerMovement, EndTurn());
+      At(playerMovement, draw, MovementHandled());
+      At(draw, enemyPlacement, EnemyHandIsFull());
+      At(enemyPlacement, enemyMovement, EndTurn());
+      At(enemyMovement, draw MovementHandled());
+      At(draw, playerPlacement, PlayerHandIsFull());
+      At(playerMovement, endGame, EnemyCrownCaptured());
+      At(enemyMovement, endGame, PlayerCrownCaptured());
+
+      //Conditions for state change
+      Func&lt;bool&gt; EndTurn() => () => endTurn == true;
+      Func&lt;bool&gt; MovementHandled() => () => MovementManager.NoViableMoves == true;
+      Func&lt;bool&gt; PlayerHandIsFull() => () => playerDeck.handSize &gt;= 4;
+      Func&lt;bool&gt; EnemyHandIsFull() => () => enemyDeck.handSize &gt;= 4;
+      Func&lt;bool&gt; PlayerCrownCaptured() => () => playerCrown.IsAlive == false;
+      Func&lt;bool&gt; EnemyCrownCaptured() => () => enemyCrown.IsAlive == false;
+    }
+
+    public void EndTurnButtonOnClick() {
+      endTurn = true;
+    }
+
+    public void AddTransition(IState to, Func&lt;bool&gt; predicate) {
+      transitions.Add(new Transition(to, predicate));
+    }
+                </code></pre>
+            <div class="contentwrap-project">
+              <img
+                class="contentgif"
+                src="assets/images/thesis-state.png"
+                style="
+                  max-height: 400px;
+                  width: auto;
+                  border-radius: 3px;
+                  margin-bottom: 30px;
+                "
+              />
+              <p>
+                Core functions like drawing or triggering movement to happen is
+                called from the corresponding states. In return, most conditions
+                are returned from the classes the state machine is calling, like
+                movement or card decks. The shown implementation is slightly
+                simplified but breaks it down pretty much to how it works.
+                Transitions are added from a state to another, meaning a
+                transition will only work out of the state it is set from
+                towards the state that it is added to, and only if the condition
+                is met. Finite State Machines are no novelty and a clean
+                solution for statebased or turnbased games. A state diagram of
+                the state machine can be seen on the left.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contentwrap">
+          <div class="contentwrap-project">
+            <img class="contentgif" src="assets/images/thesis-tests.gif" />
+            <div class="contentdescription" style="margin-left: 30px">
+              <h2 style="text-transform: uppercase">Unit Testing</h2>
+              <p>
+                For this project, I decided to research and implement elaborate
+                unit tests to make testing, refining and refactoring features
+                easier and improve workflow and code quality. For that, I wrote
+                a number of tests for all core features and primary tile
+                interaction. Running all current tests takes about 30 seconds
+                and is fully automated. Tests are natively supported by Unity
+                and can be run by the push of a button.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="contentwrap">
+          <image
+            class="content-ava"
+            src="assets/images/thesisarrow.png"
+          ></image>
+          <div class="contentdescription">
+            <h2 style="text-transform: uppercase">Postmortem</h2>
+            <p>
+              Being able to be the sole programmer for a larger project gives me
+              a great deal of freedom to work on my own accords. Lena's
+              directions and design decisions are of course the driving factor
+              for development, but the amount of flexibility allowed me to use
+              this project as a learning opportunity. I used this to deepen my
+              understanding of the principles of test driven development,
+              design- and programming patterns and the SOLID-principles. Of
+              course, the project is still in the prototype stage. So it is
+              expected that the learning process will continue further during
+              development of the game.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
     <div id="footer"></div>
   </body>
