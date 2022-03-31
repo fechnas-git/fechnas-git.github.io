@@ -749,7 +749,10 @@ body .section-content {
 
 .contentwrap {
   display: flex;
-  margin-bottom: 125px;
+}
+
+.spacer {
+  margin-bottom: 100px;
 }
 
 .contentwrap-project {
