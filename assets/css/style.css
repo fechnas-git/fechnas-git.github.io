@@ -822,6 +822,11 @@ body .section-content {
   flex-direction: column;
 }
 
+@viewport {
+  width: device-width;
+  zoom: 1;
+}
+
 @media only screen and (max-width: 800px) {
   .about {
     display: flex;
