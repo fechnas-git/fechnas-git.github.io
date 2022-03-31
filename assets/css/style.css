@@ -726,6 +726,16 @@ body .section-content {
   flex-direction: row;
   justify-content: space-between;
 }
+
+.projectimg {
+  float: left;
+  height: 400px;
+  width: 400px;
+  margin-right: 20px;
+  box-shadow: 0 30px 40px rgb(255 255 255 / 15%);
+  border-radius: 4px;
+}
+
 .skillcategory {
   box-sizing: border-box;
   padding: 0px 10px;
@@ -736,15 +746,6 @@ body .section-content {
 }
 .skillcontent {
   margin: 3px 0;
-}
-
-.projectimg {
-  float: left;
-  height: 400px;
-  width: 400px;
-  margin-right: 20px;
-  box-shadow: 0 30px 40px rgb(255 255 255 / 15%);
-  border-radius: 4px;
 }
 
 .contentwrap {
@@ -819,6 +820,66 @@ body .section-content {
   outline: none;
   overflow: hidden;
   flex-direction: column;
+}
+
+@media only screen and (max-width: 800px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+  }
+  .skills {
+    display: flex;
+    flex-direction: column;
+  }
+  .projects {
+    display: flex;
+    flex-direction: column;
+  }
+  .contentwrap {
+    display: flex;
+    flex-direction: column;
+  }
+  .projectimg {
+    height: auto;
+    margin-bottom: 25px;
+  }
+  p {
+    font-size: 1.4em;
+    color: white;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .title .title-tagline {
+    flex-direction: column;
+  }
+  .title .title-icon {
+    float: left;
+  }
+  body .section-start {
+    text-align: left;
+  }
+  .skillcontent {
+    font-size: 1.3em;
+    color: white;
+  }
+  .skilllabel {
+    font-size: 1.2em;
+    text-align: left;
+  }
+  .skillcategory {
+    padding: 0px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .skillwrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }
+  .skilllabel {
+    font-size: 1.4em;
+  }
 }
 
 /**
