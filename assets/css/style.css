@@ -875,12 +875,9 @@ body .section-content {
   .skillcategory {
     padding: 0px;
   }
-  #header nav ul li a {
-    font-size: 12px;
-  }
 
   section {
-    padding: 0 80px 0 80px;
+    padding: 80px 10px 80px 10px;
   }
 }
 @media only screen and (max-width: 700px) {
@@ -891,6 +888,11 @@ body .section-content {
   }
   .skilllabel {
     font-size: 1.4em;
+  }
+}
+@media only screen and (max-width: 400px) {
+  #header nav ul li a {
+    font-size: 12px;
   }
 }
 
