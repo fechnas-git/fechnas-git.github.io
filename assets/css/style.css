@@ -769,6 +769,15 @@ body .section-content {
   float: right;
 }
 
+.adhd-header {
+  align-content: left;
+  text-align: left;
+  text-transform: uppercase;
+  float: left;
+  font-weight: bold;
+  color: #e4e1da;
+}
+
 @media print, screen and (max-width: 720px) {
   #title .credits {
     display: block;
